@@ -1,4 +1,4 @@
-package Homework.Task23;
+package Homework.Task06_23;
 
 public class Request {
     public boolean AskMoney(Money money, final int request) {  // процесс снятия заданной суммы денег.

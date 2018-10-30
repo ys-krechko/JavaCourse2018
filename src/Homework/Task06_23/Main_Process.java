@@ -1,4 +1,4 @@
-package Homework.Task23;
+package Homework.Task06_23;
 
 /*
 Задача №23.
@@ -9,7 +9,7 @@ package Homework.Task23;
 При снятии денег функция должна рапечатывать каким количеством купюр какого номинала выдается сумма.
 Создать конструктор с тремя параметрами – количеством купюр.
  */
-public class Process {
+public class Main_Process {
     public static void main(String[] args) {
         Money money = new Money(5, 10, 15);
         AddMoney(money);

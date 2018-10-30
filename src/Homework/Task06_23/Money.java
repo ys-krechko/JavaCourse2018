@@ -1,4 +1,4 @@
-package Homework.Task23;
+package Homework.Task06_23;
 
 public class Money {
     private static int den20; // кол-во купюр номиналом 20
@@ -33,10 +33,6 @@ public class Money {
         this.den20 = den20;
         this.den50 = den50;
         this.den100 = den100;
-    }
-
-    public Money(){
-
     }
 
     public void AddMoney(int add20, int add50, int add100) {  // добавляем купюры в банкомат
