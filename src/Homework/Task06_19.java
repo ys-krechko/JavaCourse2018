@@ -6,13 +6,10 @@ package Homework;
 в начале и конце текста также могут быть пробелы, но могут и отсутствовать.
 */
 
-/*Вопрос: Если ввести больше 3 пробелов подряд начинает появлятся +1 к счётчика из доп пробела.
-*         Можно ли как то убрать его, кроме ещё одного ReplaceAll?*/
-
 public class Task06_19 {
     public static void main(String[] args) {
-        String text = " Один два  три четыре  пять ";
-        int count = text.trim().replaceAll("  ", " ").split(" ").length;
+        String text = " Один два  три  четыре     пять   шесть     ";
+        int count = text.trim().split(" +").length;
         System.out.println("Количество слов в предложении: " + count);
     }
 }
