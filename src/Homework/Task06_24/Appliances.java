@@ -1,16 +1,16 @@
 package Homework.Task06_24;
 
-public class Appliances implements AppliancesPower {
+public abstract class Appliances implements AppliancesPower {
     boolean power;
     String name;
 
 
     public Appliances(boolean power, String name) {
-        this.power=power;
-        this.name=name;
+        this.power = power;
+        this.name = name;
     }
 
-    public void name () {
+    public void name() {
         System.out.println(name);
     }
 

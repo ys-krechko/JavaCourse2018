@@ -8,13 +8,19 @@ import java.io.IOException;
 
 public class Task14_30 {
     public static void main(String[] args) throws IOException {
-        int count;
-        try (BufferedReader reader = new BufferedReader(new FileReader("Task14_30.txt"))) {
-            int c;
-            while ((c = reader.read()) != -1) {
-                System.out.print((char) c);
+        int countWords = 0;
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\user\\IdeaProjects\\untitled\\src\\Homework\\Task14_30\\Task14_30.txt"))) {
+            String c;
+            int lengthBefore = 0;
+            int lengthAfter = 0;
+            while ((c = reader.readLine()) != null) {
+                System.out.println(c);
+                countWords += c.replaceAll("[,.!?;:/'-]", " ").split("\\s+").length;
+                lengthBefore += c.length();
+                lengthAfter += c.replaceAll("[,.!?;:/'-]", "").length();
             }
-
+            System.out.println("Количесвто слов - " + countWords);
+            System.out.println("Количесвто слов - " + (lengthBefore - lengthAfter));
         } catch (IOException e) {
             System.out.println("Ошибка ввода-ввывода: " + e);
         }

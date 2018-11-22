@@ -3,7 +3,7 @@ package Homework.Task06_23;
 public class Request {
     public boolean AskMoney(Money money, final int request) {  // процесс снятия заданной суммы денег.
         boolean answer;
-        if (request % 10 != 0) {                 // В функции на вход - количество денег, на выход - булевское значение.
+        if (request % 10 != 0) { // В функции на вход - количество денег, на выход - булевское значение.
             System.out.println("Неверная сумма, пожалуйста, попробуйте ещё раз");
             answer = false;
         } else {

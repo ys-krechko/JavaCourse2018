@@ -47,7 +47,7 @@ public class Time {
         return (hour * 3600) + (minute * 60) + second;
     }
 
-    public int compareTo(Time time) {
+    /*public int compareTo(Time time) {
         int hourCompare = Integer.compare(hour, time.hour);
         if (hourCompare != 0) {
             return hourCompare;
@@ -57,6 +57,15 @@ public class Time {
             return minuteCompare;
         }
         return Integer.compare(second, time.second);
+    }*/
+
+    public int compareTo(Time o) {
+        if (this.toSeconds() < o.toSeconds()) {
+            return -1;
+        } else if (this.toSeconds() > o.toSeconds()) {
+            return 1;
+        } else
+            return 0;
     }
 
     public String compareToText(int compareTo) {

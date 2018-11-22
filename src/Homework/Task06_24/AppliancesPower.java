@@ -1,5 +1,5 @@
 package Homework.Task06_24;
 
-public interface AppliancesPower extends AppliancesLifeTime {
+public interface AppliancesPower {
     void printPowerState();
 }

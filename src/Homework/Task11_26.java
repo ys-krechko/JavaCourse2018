@@ -7,6 +7,7 @@ package Homework;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Random;
 
 public class Task11_26 {
@@ -19,13 +20,15 @@ public class Task11_26 {
         }
         System.out.print(marks + " ");
         System.out.println();
-        for (int i = 0; i < x; i++) { // удаляет неудовлетворительные оценки из списка
-            if (marks.get(i) <= 3) {
-                marks.remove(i);
-                i--;
-                x--;
+        // удаляет неудовлетворительные оценки из списка
+        ListIterator<Integer> listIter = marks.listIterator();
+        while (listIter.hasNext()) {
+            if (listIter.next() <= 3) {
+                listIter.remove();
             }
         }
-        System.out.print(marks + " ");
+        for (Integer m : marks) {
+            System.out.print(m+" ");
+        }
     }
 }
