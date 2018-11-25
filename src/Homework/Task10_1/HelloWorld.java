@@ -1,4 +1,4 @@
-package Homework.Annotation;
+package Homework.Task10_1;
 
 /*Создать аннотацию, которая будучи применена к методу, выведет вермя его выполнения.*/
 
