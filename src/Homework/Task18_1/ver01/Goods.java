@@ -1,4 +1,4 @@
-package Homework.Task18_1;
+package Homework.Task18_1.ver01;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class Goods {
 
         goodsPrice.add(new BigDecimal(2.35));
         goodsPrice.add(new BigDecimal(1.02));
-        goodsPrice.add(new BigDecimal(1.50));
+        goodsPrice.add(new BigDecimal(1.90));
         goodsPrice.add(new BigDecimal(0.99));
         goodsPrice.add(new BigDecimal(1.20));
         goodsPrice.add(new BigDecimal(1.00));
