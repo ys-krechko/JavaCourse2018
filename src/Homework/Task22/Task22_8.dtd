@@ -4,4 +4,4 @@
 <!ELEMENT x (#PCDATA)>
 <!ELEMENT y (#PCDATA)>
 
-<!ATTLIST point unit (cm|mm|px)>
+<!ATTLIST point unit (cm|mm|px) #REQUIRED>
