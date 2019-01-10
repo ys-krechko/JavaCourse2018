@@ -17,9 +17,10 @@ public class StoreCashierGenerator implements Runnable {
     public void run() {
         int count = 0;
         while (count < storeCashierCount) {
-            Thread.currentThread().setName("Store cashier generate");
+            thrd.currentThread().setName("Сгенерировано касс: ");
             count++;
             line.put(new StoreCashier("Касса № " + count));
+            System.out.println(thrd.getName()+" "+count);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
