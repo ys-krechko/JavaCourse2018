@@ -20,12 +20,12 @@ public class Task30_5 {
             connection = DriverManager.getConnection(dbURL, user, password);
             Statement statement = connection.createStatement();
 
-            String tableRSql = "CREATE TABLE IF NOT EXISTS receivers"
+            String tableRSql = "CREATE TABLE IF NOT EXISTS reseivers"
                     + "(num int PRIMARY KEY AUTO_INCREMENT," +
                     "name varchar(255))";
             statement.execute(tableRSql);
 
-            String insertRSql = "INSERT INTO receivers (name)"
+            String insertRSql = "INSERT INTO reseivers (name)"
                     + " VALUES(?)";
             PreparedStatement pStatementRec = connection.prepareStatement(insertRSql);
             pStatementRec.setString(1, "Интернет-провайдер \"Соло\"");
@@ -35,13 +35,13 @@ public class Task30_5 {
             pStatementRec.setString(1, "МТС");
             pStatementRec.executeUpdate();
 
-            String tableSql = "CREATE TABLE IF NOT EXISTS expenses"
+            String tableSql = "CREATE TABLE IF NOT EXISTS expences"
                     + "(num int PRIMARY KEY AUTO_INCREMENT, paydate date,"
-                    + "receiver int, value dec," +
-                    "FOREIGN KEY(receiver) REFERENCES receivers (num))";
+                    + "reseiver int, value dec," +
+                    "FOREIGN KEY(reseiver) REFERENCES reseivers (num))";
             statement.execute(tableSql);
 
-            String insertSql = "INSERT INTO expenses(paydate, receiver, value)"
+            String insertSql = "INSERT INTO expences(paydate, reseiver, value)"
                     + " VALUES(?, ?, ?)";
             PreparedStatement pStatementExp = connection.prepareStatement(insertSql);
             pStatementExp.setString(1, "10.05.2011");
@@ -61,12 +61,12 @@ public class Task30_5 {
             pStatementExp.setBigDecimal(3, BigDecimal.valueOf(12950));
             pStatementExp.executeUpdate();
 
-            String query = "SELECT num, paydate, receiver, value FROM expenses";
+            String query = "SELECT num, paydate, reseiver, value FROM expences";
             ResultSet result = statement.executeQuery(query);
             while (result.next()) {
                 System.out.print(result.getString("num") + " ");
                 System.out.print(result.getString("paydate") + " ");
-                System.out.print(result.getString("receiver") + " ");
+                System.out.print(result.getString("reseiver") + " ");
                 System.out.print(result.getString("value"));
                 System.out.println();
             }
