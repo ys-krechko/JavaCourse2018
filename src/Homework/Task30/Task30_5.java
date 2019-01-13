@@ -28,11 +28,11 @@ public class Task30_5 {
             String insertRSql = "INSERT INTO receivers (name)"
                     + " VALUES(?)";
             PreparedStatement pStatementRec = connection.prepareStatement(insertRSql);
-            pStatementRec.setString(1,"Интернет-провайдер \"Соло\"");
+            pStatementRec.setString(1, "Интернет-провайдер \"Соло\"");
             pStatementRec.executeUpdate();
-            pStatementRec.setString(1,"Гипермаркет \"Корона\"");
+            pStatementRec.setString(1, "Гипермаркет \"Корона\"");
             pStatementRec.executeUpdate();
-            pStatementRec.setString(1,"МТС");
+            pStatementRec.setString(1, "МТС");
             pStatementRec.executeUpdate();
 
             String tableSql = "CREATE TABLE IF NOT EXISTS expenses"
