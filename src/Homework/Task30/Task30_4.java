@@ -20,44 +20,44 @@ public class Task30_4 {
             connection = DriverManager.getConnection(dbURL, user, password);
             Statement statement = connection.createStatement();
 
-            String tableRSql = "CREATE TABLE IF NOT EXISTS reseivers"
+            String tableRSql = "CREATE TABLE IF NOT EXISTS receivers"
                     + "(num int PRIMARY KEY AUTO_INCREMENT," +
                     "name varchar(255))";
             statement.execute(tableRSql);
-            String insertRSql = "INSERT INTO reseivers (name)"
+            String insertRSql = "INSERT INTO receivers (name)"
                     + " VALUES('Интернет-провайдер \"Соло\"')";
             statement.executeUpdate(insertRSql);
-            String insertR2Sql = "INSERT INTO reseivers (name)"
+            String insertR2Sql = "INSERT INTO receivers (name)"
                     + " VALUES('Гипермаркет \"Корона\"')";
             statement.executeUpdate(insertR2Sql);
-            String insertR3Sql = "INSERT INTO reseivers (name)"
+            String insertR3Sql = "INSERT INTO receivers (name)"
                     + " VALUES('МТС')";
             statement.executeUpdate(insertR3Sql);
 
-            String tableSql = "CREATE TABLE IF NOT EXISTS expences"
+            String tableSql = "CREATE TABLE IF NOT EXISTS expenses"
                     + "(num int PRIMARY KEY AUTO_INCREMENT, paydate date,"
-                    + "reseiver int, value dec," +
-                    "FOREIGN KEY(reseiver) REFERENCES reseivers (num))";
+                    + "receiver int, value dec," +
+                    "FOREIGN KEY(receiver) REFERENCES receivers (num))";
             statement.execute(tableSql);
-            String insertSql = "INSERT INTO expences(paydate, reseiver, value)"
+            String insertSql = "INSERT INTO expenses(paydate, receiver, value)"
                     + " VALUES('10.05.2011', 1, 20000)";
             statement.executeUpdate(insertSql);
-            String insert2Sql = "INSERT INTO expences(paydate, reseiver, value)"
+            String insert2Sql = "INSERT INTO expenses(paydate, receiver, value)"
                     + " VALUES('10.05.2011', 2, 94200)";
             statement.executeUpdate(insert2Sql);
-            String insert3Sql = "INSERT INTO expences(paydate, reseiver, value)"
+            String insert3Sql = "INSERT INTO expenses(paydate, receiver, value)"
                     + " VALUES('11.05.2011', 3, 10000)";
             statement.executeUpdate(insert3Sql);
-            String insert4Sql = "INSERT INTO expences(paydate, reseiver, value)"
+            String insert4Sql = "INSERT INTO expenses(paydate, receiver, value)"
                     + " VALUES('11.05.2011', 2, 12950)";
             statement.executeUpdate(insert4Sql);
 
-            String query = "SELECT num, paydate, reseiver, value FROM expences";
+            String query = "SELECT num, paydate, receiver, value FROM expenses";
             ResultSet result = statement.executeQuery(query);
             while (result.next()) {
                 System.out.print(result.getString("num") + " ");
                 System.out.print(result.getString("paydate") + " ");
-                System.out.print(result.getString("reseiver") + " ");
+                System.out.print(result.getString("receiver") + " ");
                 System.out.print(result.getString("value"));
                 System.out.println();
             }
