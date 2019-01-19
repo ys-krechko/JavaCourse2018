@@ -16,7 +16,7 @@ public class Task20_5 {
         System.out.println("2 - Русский");
         System.out.println("3 - Белорусский");
         System.out.println("Другое - Английский");
-        char i = 'z';
+        char i = '2';
         switch (i) {
             case '1':
                 language = "en";
